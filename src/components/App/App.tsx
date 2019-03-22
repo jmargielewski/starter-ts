@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import List from '../List/List';
 
 export default class App extends Component<AppProps, AppState> {
   public constructor(props: AppProps) {
@@ -10,7 +11,8 @@ export default class App extends Component<AppProps, AppState> {
     const { name } = this.state;
     return (
       <main className="container">
-        <h1>{name}</h1>
+        <h1>TypeScript</h1>
+        <List />
       </main>
     );
   }
