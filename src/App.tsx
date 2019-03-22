@@ -1,5 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const App = () => <div className="App">Hello Wolrd with TypeScript</div>;
+export default class App extends Component<AppProps, AppState> {
+  public constructor(props: AppProps) {
+    super(props);
+    this.state = { name: 'TypeScript' };
+  }
 
-export default App;
+  public render(): JSX.Element {
+    const { name } = this.state;
+    return (
+      <main className="container">
+        <h1>{name}</h1>
+      </main>
+    );
+  }
+}
+
+interface AppProps {
+  store?: null;
+}
+
+interface AppState {
+  name: string;
+}
