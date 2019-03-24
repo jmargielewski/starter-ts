@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 export default class List extends Component<ListProps, ListState> {
   public constructor(props: ListProps) {
@@ -9,9 +10,11 @@ export default class List extends Component<ListProps, ListState> {
   public render(): JSX.Element {
     const { names } = this.state;
     return (
-      <ul className="container">
+      <ul className="usersList">
         {names.map(name => (
-          <li key={name}>{name}</li>
+          <li key={name}>
+            <Link to={`${name}`}>{name}</Link>
+          </li>
         ))}
       </ul>
     );
